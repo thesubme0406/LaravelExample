@@ -61,6 +61,20 @@
                                         {{ __('Logout') }}
                                     </a>
 
+                                    <a class="dropdown-item" href="{{ url('/author/create') }}">
+                                        เขียนบทความ
+                                    </a>
+                                
+                                    <a class="dropdown-item" href="{{ url('/author/blog') }}">
+                                        บทความทั้งหมด
+                                    </a>
+                                
+                                    {{-- <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a> --}}
+
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
@@ -73,8 +87,11 @@
         </nav>
 
         <main class="py-4">
-            @yield('content')
+            <div class="container">
+                @yield('content')
+            </div>
         </main>
+        
     </div>
 </body>
 </html>
